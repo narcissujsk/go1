@@ -7,6 +7,15 @@ import (
 	_ "go1/test2"
 )
 
+func Factorial(n uint64) (result uint64) {
+	if n > 0 {
+		result = n * Factorial(n-1)
+		fmt.Println(result)
+		return result
+	}
+	return 1
+}
+
 func main() {
 	var a = true
 	fmt.Println(a)
@@ -29,4 +38,7 @@ func main() {
 	fmt.Println(test2_1)
 	fmt.Println(test2_1.Human.Name)
 	//test2_1.Println()
+	var i int = 65
+	//i = 100
+	fmt.Printf("%d 的阶乘是 %d\n", i, Factorial(uint64(i)))
 }
